@@ -3,6 +3,36 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  // js .map()
+const items = [
+  "Comment✏️","Award🏆","Share📤","Save🏷️"
+]
+
+const nums = [1,2,3,4,5]
+const numsMultiplyTwo = nums.map(num=> num * 2) // [2,4,6,8,10]
+console.log(numsMultiplyTwo);
+
+const newItems = items.map(item => item)
+
+console.log(newItems);
+
+const buttonArr = items.map(function (value, index){
+  // return "aa" + value + "ss";
+  // return 'aa' + value + 'ss';
+
+  return <button key={index} className="btn btn-light btn-sm">{value}</button>
+  // return <button key={index} styles="margin:10px !important">{value}</button>
+
+
+  // return <button key={index} type="button" className="btn btn-secondary btn-sm" >{value}</button>
+
+  // return <button key={index} type="button" className="btn btn-secondary btn-sm" styles="margin:100px !important">{value}</button>
+
+});
+
+
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +42,21 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        
+        <div>
+          {buttonArr}
+{/* <button  className="btn btn-light">Comment✏️</button>
+<button type="button" className="btn btn-secondary btn-sm">Award🏆</button>
+<button type="button" className="btn btn-light btn-sm">Share📤</button>
+<button type="button" className="btn btn-secondary btn-sm">Save🏷️</button> */}
+          
+        </div>
+      
+
+
+
+
+        {/* <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
@@ -49,7 +93,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>
