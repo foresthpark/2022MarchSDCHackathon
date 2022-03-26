@@ -1,10 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { Card } from "react-bootstrap";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import NewsCard from "../components/newsCard";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [articleData, setArticleData] = useState(null);
@@ -18,21 +15,6 @@ export default function Home() {
     setArticleData(data);
     return data;
   };
-
-  // js .map()
-  const items = ["Comment✏️", "Award🏆", "Share📤", "Save🏷️"];
-
-  const nums = [1, 2, 3, 4, 5];
-  const numsMultiplyTwo = nums.map((num) => num * 2); // [2,4,6,8,10]
-  console.log(numsMultiplyTwo);
-
-  const newItems = items.map((item) => item);
-
-  console.log(newItems);
-
-  const buttonArr = items.map(function (value, index) {
-    // return "aa" + value + "ss";
-    // return 'aa' + value + 'ss';
 
     return (
       <button key={index} className="btn btn-light btn-sm">
