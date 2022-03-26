@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import React from 'react';
-import '../styles/globals.css'
-=======
 import Head from "next/head";
 import Script from "next/script";
 import "../styles/globals.css";
->>>>>>> ab0303bfa6e08dbc4526cbd84fe1205bf504fc29
 
 function MyApp({ Component, pageProps }) {
   return (
