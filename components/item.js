@@ -1,12 +1,9 @@
 import React from "react";
 
-export default function Item({ svg, text }) {
+export default function Item({ text }) {
   return (
     <div>
-      <span className="p2">
-        {svg}
-        <span className="p-2">{text}</span>
-      </span>
+      <span className="p-2">{text}</span>
     </div>
   );
 }
