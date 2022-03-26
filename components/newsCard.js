@@ -4,7 +4,8 @@ import Item from "./item";
 
 export default function NewsCard({ article }) {
   const { by, id, score, time, title, type, url } = article;
-  console.log("🚀🚀🚀🚀 ~ file: newsCard.js ~ line 7 ~ NewsCard ~ url", url);
+  const date = new Date(time);
+
   const items = [
     {
       text: "Comment✏️",
@@ -14,7 +15,6 @@ export default function NewsCard({ article }) {
     { text: "Save🏷️" },
   ];
 
-  // const buttonArr = items.map(function (value, index) {
   //   return (
   //     <button key={index} className="btn btn-light btn-sm">
   //       {value}
@@ -103,7 +103,7 @@ export default function NewsCard({ article }) {
       <Link href={url ?? "#"}>
         <a target={"_blank"} noreferrer noopener>
           <div className="d-flex flex-column p-3">
-            <div>{new Date(time).toDateString()}</div>
+            <div>{date.toDateString()}</div>
             <div>{title}</div>
             <div>{by}</div>
             <div>
