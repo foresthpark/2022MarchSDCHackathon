@@ -13,20 +13,13 @@ export default function Home() {
   const getArticleData = async () => {
     const data = await (await fetch("/api/articles")).json();
     setArticleData(data);
+    console.log(data);
     return data;
   };
 
-    return (
-      <button key={index} className="btn btn-light btn-sm">
-        {value}
-      </button>
-    );
-    // return <button key={index} styles="margin:10px !important">{value}</button>
 
-    // return <button key={index} type="button" className="btn btn-secondary btn-sm" >{value}</button>
-
-    // return <button key={index} type="button" className="btn btn-secondary btn-sm" styles="margin:100px !important">{value}</button>
-  });
+//   var s = new Date(1504095567183).toLocaleDateString("en-US")
+// console.log(s)
 
   return (
     <div className={styles.container}>
