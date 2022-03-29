@@ -4,12 +4,14 @@ import Item from "./item";
 
 export default function NewsCard({ article }) {
   const { by, id, score, time, title, type, url } = article;
-  const date = new Date(time);
+
+  // covert unix TimeStamp to date string
+  const milliseconds = time * 1000
+  const dateObject = new Date(milliseconds);
+  const humanDateFormat = dateObject.toLocaleString();
 
   const items = [
-    {
-      text: "Comment✏️",
-    },
+    { text: "Comment✏️",},
     { text: "Award🏆" },
     { text: "Share📤" },
     { text: "Save🏷️" },
@@ -103,7 +105,7 @@ export default function NewsCard({ article }) {
       <Link href={url ?? "#"}>
         <a target={"_blank"} noreferrer noopener>
           <div className="d-flex flex-column p-3">
-            <div>{date.toDateString()}</div>
+            <div>{humanDateFormat}</div>
             <div>{title}</div>
             <div>{by}</div>
             <div>
